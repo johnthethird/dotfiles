@@ -1,0 +1,28 @@
+startup_message off
+vbell off
+autodetach on
+ 
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}]'
+
+#hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=%D %M %d %c"
+#hardstatus string '%{= kK}%-Lw%{= KW}%50>%n%f %t%{= kK}%+Lw%< %{=kG}%-= %d%M %c:%s%{-}'
+
+#hardstatus alwayslastline
+#hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a " 
+
+#hardstatus alwayslastline '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}[%{W}%n%f %t%?(%u)%?%{=b kR}]%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %D %m/%d %C%a ]%{W}'
+
+hardstatus alwayslastline
+#hardstatus string '%{= kg}[%{G}%H%{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n-%t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{g}[%{B}%d.%m.%Y %{G}%C%A%{g}]'
+hardstatus string '%{= kg}[%{G}%H%{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n-%t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{g}'
+
+
+bindkey -k k2 prev
+bindkey -k k3 next
+
+shell fish
+
+screen -t RailsCode 0 
+screen -t TailLog 1 
+#shelltitle "> | fish" 
