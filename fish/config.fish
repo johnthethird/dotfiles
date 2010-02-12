@@ -8,6 +8,8 @@ end
 
 set -x EDITOR "vim"
 
+set -x PATH $PATH ~/.gem/ruby/1.8/bin
+
 set fish_greeting ""
 #set -x CLICOLOR 1
 
@@ -76,4 +78,11 @@ function fishc -d "vi config.fish"
   vi ~/.config/fish/config.fish
 end
 
+function gemi -d "gem install --no-ri --no-rdoc"
+  gem install --no-rdoc --no-ri $argv;
+end
 
+
+function helpfish -d "Show all custom commands"
+  grep function ~/.config/fish/config.fish
+end
