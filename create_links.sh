@@ -6,4 +6,5 @@ ln -s ~/dotfiles/screenrc ~/.screenrc
 ln -s ~/dotfiles/irbrc ~/.irbrc
 ln -s ~/dotfiles/vim-rails ~/.vim
 ln -s ~/dotfiles/vim-rails/vimrc ~/.vimrc
-
+ln -s ~/dotfiles/resty ~/resty
+ln -s ~/dotfiles/bashrc ~/.bashrc

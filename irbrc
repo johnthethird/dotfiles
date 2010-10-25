@@ -2,12 +2,17 @@ require 'rubygems'
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'pp'
+require 'looksee/shortcuts'
+require 'irb/completion'
+require 'wirble'
+Wirble.init
+Wirble.colorize
  
-ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
- 
-IRB.conf[:SAVE_HISTORY] = 100
+IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
+IRB.conf[:USE_READLINE] = true
+IRB.conf[:AUTO_INDENT]=true
 
 # Just for Rails...
 if rails_env = ENV['RAILS_ENV']
@@ -20,7 +25,10 @@ if rails_env = ENV['RAILS_ENV']
     :RETURN   => "=> %s\n" 
   }
   IRB.conf[:PROMPT_MODE] = :RAILS
-
+  require 'hirb'
+  require 'hirb/import_object'
+  Hirb.enable
+  extend Hirb::Console
   # Called after the irb session is initialized and Rails has
   # been loaded (props: Mike Clark).
   IRB.conf[:IRB_RC] = Proc.new do
